@@ -24,16 +24,16 @@ const Navbar = () => {
             {/* Overlay Menu */}
             {isMenuOpen && (
                 <div
-                    className={`fixed top-0 right-0 h-full w-64 bg-[#1e3a8a] p-6 shadow-xl z-50 transform transition-transform duration-300 ease-in-out rounded-l-2xl`}
+                    className={`fixed top-0 right-0 h-full w-64 bg-white p-6 shadow-xl z-50 transform transition-transform duration-300 ease-in-out rounded-l-2xl`}
                 >
                     <button
-                        className="text-white mb-6 text-lg font-semibold hover:text-gray-200"
+                        className="text-blue-500 mb-6 text-lg font-semibold hover:text-gray-200"
                         onClick={() => setIsMenuOpen(false)}
                     >
                         ✕ Close
                     </button>
-                    <nav className="flex flex-col space-y-4 text-white">
-                        <span className="flex items-center space-x-2 p-2 rounded hover:bg-indigo-700 cursor-pointer transition">
+                    <nav className="flex flex-col space-y-4 text-blue-500">
+                        <span className="flex items-center space-x-2 p-2 rounded hover:bg-indigo-100 cursor-pointer transition">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 className="h-5 w-5"
@@ -45,7 +45,7 @@ const Navbar = () => {
                             </svg>
                             <span>Dashboard</span>
                         </span>
-                        <span className="flex items-center space-x-2 p-2 rounded hover:bg-indigo-700 cursor-pointer transition">
+                        <span className="flex items-center space-x-2 p-2 rounded hover:bg-indigo-100 cursor-pointer transition">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 className="h-5 w-5"
@@ -57,7 +57,7 @@ const Navbar = () => {
                             </svg>
                             <span>Create Group</span>
                         </span>
-                        <span className="flex items-center space-x-2 p-2 rounded hover:bg-indigo-700 cursor-pointer transition">
+                        <span className="flex items-center space-x-2 p-2 rounded hover:bg-indigo-100 cursor-pointer transition">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 className="h-5 w-5"
@@ -69,7 +69,7 @@ const Navbar = () => {
                             </svg>
                             <span>Sign Up</span>
                         </span>
-                        <span className="flex items-center space-x-2 p-2 rounded hover:bg-indigo-700 cursor-pointer transition">
+                        <span className="flex items-center space-x-2 p-2 rounded hover:bg-indigo-100 cursor-pointer transition">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 className="h-5 w-5"
