@@ -3,6 +3,7 @@ import Navbar from '../components/navbar'
 import homeimg01 from '../assets/homeimg01.png'
 import homeimg02 from '../assets/homeimg02.png'
 import bill from '../assets/bill.jpg'
+import Footer from '../components/Footer.jsx'
 
 const HomePage = () => {
     return (
@@ -82,6 +83,8 @@ const HomePage = () => {
                     />
                 </div>
             </div>
+
+            <Footer />
 
         </div>
     )

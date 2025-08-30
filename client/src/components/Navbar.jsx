@@ -23,13 +23,70 @@ const Navbar = () => {
 
             {/* Overlay Menu */}
             {isMenuOpen && (
-                <div className="absolute top-full right-6 w-48 bg-gray-800 p-4 rounded shadow-lg flex flex-col space-y-2 -mt-1 z-50">
-                    <span>Dashboard</span>
-                    <span>Create Group</span>
-                    <span>Sign Up</span>
-                    <span>Profile</span>
+                <div
+                    className={`fixed top-0 right-0 h-full w-64 bg-[#1e3a8a] p-6 shadow-xl z-50 transform transition-transform duration-300 ease-in-out rounded-l-2xl`}
+                >
+                    <button
+                        className="text-white mb-6 text-lg font-semibold hover:text-gray-200"
+                        onClick={() => setIsMenuOpen(false)}
+                    >
+                        ✕ Close
+                    </button>
+                    <nav className="flex flex-col space-y-4 text-white">
+                        <span className="flex items-center space-x-2 p-2 rounded hover:bg-indigo-700 cursor-pointer transition">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="h-5 w-5"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h18v18H3V3z" />
+                            </svg>
+                            <span>Dashboard</span>
+                        </span>
+                        <span className="flex items-center space-x-2 p-2 rounded hover:bg-indigo-700 cursor-pointer transition">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="h-5 w-5"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                            </svg>
+                            <span>Create Group</span>
+                        </span>
+                        <span className="flex items-center space-x-2 p-2 rounded hover:bg-indigo-700 cursor-pointer transition">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="h-5 w-5"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 12v4m0 0v4m0-4h4m-4 0H8" />
+                            </svg>
+                            <span>Sign Up</span>
+                        </span>
+                        <span className="flex items-center space-x-2 p-2 rounded hover:bg-indigo-700 cursor-pointer transition">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="h-5 w-5"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5.121 17.804A4 4 0 0112 14a4 4 0 016.879 3.804M12 12a4 4 0 110-8 4 4 0 010 8z" />
+                            </svg>
+                            <span>Profile</span>
+                        </span>
+                    </nav>
                 </div>
             )}
+
+
+
 
         </nav>
     )
