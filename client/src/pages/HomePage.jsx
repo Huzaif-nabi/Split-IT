@@ -1,11 +1,13 @@
 import React from 'react'
-import Navbar from '../components/navbar'
+import Navbar from '../components/Navbar.jsx'
 import homeimg01 from '../assets/homeimg01.png'
 import homeimg02 from '../assets/homeimg02.png'
 import bill from '../assets/bill.jpg'
 import Footer from '../components/Footer.jsx'
+import { useNavigate } from 'react-router-dom'
 
 const HomePage = () => {
+     const navigate = useNavigate();
     return (
         <div>
             <Navbar />
@@ -19,7 +21,7 @@ const HomePage = () => {
                         No more complicated calculations or forgotten payments. Whether you’re traveling, dining out,
                         or sharing bills, Settle-It helps you track, split, and settle expenses effortlessly.
                     </p>
-                    <button className="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition">
+                    <button  onClick={() => navigate('/auth/login')} className="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition">
                         Get started
                     </button>
                 </div>
