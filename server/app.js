@@ -1,20 +1,28 @@
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+import express from "express";
+import dotenv from "dotenv";
+import http from "http";
+import cookieParser from "cookie-parser";
+import connectDB from "./config/db.js";
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+dotenv.config();
 
-var app = express();
+const app = express();
+const server = http.createServer(app);
 
-app.use(logger('dev'));
+// Middleware
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+// Routes
+app.get("/", (req, res) => {
+  console.log("Hello");
+  res.send("Hello World!");
+});
 
-module.exports = app;
+const PORT = process.env.PORT || 5000;
+
+connectDB();
+
+server.listen(PORT, () => {
+  console.log(`Server running on http://localhost:${PORT}`);
+});
