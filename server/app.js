@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import http from "http";
 import cookieParser from "cookie-parser";
 import connectDB from "./config/db.js";
+import router from "./routes/auth.js";
 
 dotenv.config();
 
@@ -13,7 +14,10 @@ const server = http.createServer(app);
 app.use(express.json());
 app.use(cookieParser());
 
+
+
 // Routes
+app.use("/api/auth", router ); 
 app.get("/", (req, res) => {
   console.log("Hello");
   res.send("Hello World!");

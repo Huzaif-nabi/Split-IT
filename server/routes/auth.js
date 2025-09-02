@@ -1,21 +1,9 @@
+// routes/auth.router.js
 import express from "express";
-import bcrypt from "bcryptjs";
-import User from "../models/User.js";
+import signUp from "../controllers/auth.controller.js";
 
 const router = express.Router();
 
-// signUp
+router.post("/signup", signUp);
 
-router.post('/signUp', (req,res)=>{
-    try {
-        const {name, email, password} = req.body;
-
-        if(email){
-            res.send("User already exists");
-        }else{
-            
-        }
-    } catch (error) {
-        
-    }
-})
+export default router;
