@@ -4,6 +4,9 @@ import http from "http";
 import cookieParser from "cookie-parser";
 import connectDB from "./config/db.js";
 import router from "./routes/auth.js";
+import session from "express-session";
+import passport from "passport";
+import "./config/passport.js"; 
 
 dotenv.config();
 
@@ -14,14 +17,22 @@ const server = http.createServer(app);
 app.use(express.json());
 app.use(cookieParser());
 
-
-
+app.use(session({
+  secret: process.env.GOOGLE_CLIENT_SECRET,
+  resave: false,
+  saveUninitialized: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 // Routes
 app.use("/api/auth", router ); 
+
 app.get("/", (req, res) => {
   console.log("Hello");
   res.send("Hello World!");
 });
+
+
 
 const PORT = process.env.PORT || 5000;
 

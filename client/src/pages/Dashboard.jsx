@@ -1,38 +1,38 @@
 import React from "react";
-import Navbar from "../components/Navbar.jsx";
+import { useNavigate } from "react-router-dom";
 import GroupCard from "../components/GroupCard.jsx";
+import dummyGroups from "../assets/groups.js";
+import Navbar from "../components/Navbar.jsx";
 
 const Dashboard = () => {
+  const navigate = useNavigate();
+
   return (
-    <div className="min-h-screen">
-      {/* Navbar */}
+    <div>
       <Navbar />
 
-      {/* Content */}
-      <div className="max-w-6xl mx-auto px-6 py-10">
-        {/* Header Section */}
-        <div className="flex items-center justify-between mb-8">
-          <h3 className="text-2xl font-bold text-gray-800">Your Groups</h3>
-          <button className="bg-blue-600 text-white px-5 py-2 rounded-xl shadow-md hover:bg-blue-700 transition">
-            + Create Group
-          </button>
-        </div>
+      {/* Header Section */}
+      <div className="flex items-center justify-between px-6 py-4 border-b border-gray-200">
+        <h2 className="text-2xl font-bold text-gray-800">Your Groups</h2>
+        <button
+          onClick={() => navigate("/groupform")}
+          className="px-4 py-2 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition duration-200"
+        >
+          + Create Group
+        </button>
+      </div>
 
-        {/* Groups Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <GroupCard />
-          <GroupCard />
-          <GroupCard />
-          <GroupCard />
-          <GroupCard />
-          <GroupCard />
-          <GroupCard />
-          <GroupCard />
-          <GroupCard />
-          <GroupCard />
-          <GroupCard />
-          <GroupCard />
-        </div>
+      {/* Group Cards Section */}
+      <div className="grid gap-4 p-6 md:grid-cols-2 lg:grid-cols-3">
+        {dummyGroups.map((group) => (
+          <GroupCard
+            key={group._id}
+            _id = {group._id}
+            name={group.name}
+            owe={group.owe}
+            owed={group.owed}
+          />
+        ))}
       </div>
     </div>
   );

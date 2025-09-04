@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
-import bcrypt from 'bcryptjs';   
+import bcrypt from 'bcryptjs';  
+
 
 const userSchema = new mongoose.Schema({
     name: {
@@ -16,7 +17,9 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
         minlength: 3
-    }
+    },
+    groups: [{ type: mongoose.Schema.Types.ObjectId, 
+            ref: "Group" }]
 }, { timestamps: true });
 
 userSchema.pre('save', async function(next) {
